@@ -1,18 +1,17 @@
-# Local Personal
+# homebrew-personal
 
-## How do I install these formulae?
+My personal Homebrew tap — includes custom formulae and casks I maintain locally.
 
-`brew install local/personal/<formula>`
+## 🧰 Installation
 
-Or `brew tap local/personal` and then `brew install <formula>`.
+You can add this tap directly from GitHub:
 
-Or, in a `brew bundle` `Brewfile`:
-
-```ruby
-tap "local/personal"
-brew "<formula>"
+```bash
+brew tap niderhoff/personal
 ```
 
-## Documentation
+Then install any cask or formula from it, for example:
 
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
+```bash
+brew install --cask niderhoff/personal/neovim-nightly
+```
