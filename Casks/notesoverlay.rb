@@ -1,6 +1,6 @@
 cask "notesoverlay" do
-  version "1.2.0"
-  sha256 "a8ef07aac258f11c1c71e8f662f5ff20de1d28660ff22c89349b8178235f06a2"
+  version "1.2.1"
+  sha256 "3fecd98a453d1ce336567bfc48918ae3834db162d98cbd2bb0a6255ce8ea7512"
 
   url "https://github.com/niderhoff/notesoverlay/releases/download/v#{version}/NotesOverlay-#{version}.zip"
   name "NotesOverlay"
