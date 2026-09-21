@@ -12,7 +12,7 @@ cask "discordo" do
 
   binary "discordo"
 
-  postflight do
-    system_command "xattr", args: ["-cr", staged_path.to_s]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{staged_path}}"]
   end
 end

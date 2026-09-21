@@ -16,7 +16,7 @@ cask "neovim-nightly" do
   # install under a different name so it doesn't collide with brew's neovim
   binary "nvim-macos-#{arch}/bin/nvim"
 
-  postflight do
-    system_command "xattr", args: ["-cr", staged_path.to_s]
+  postflight_steps do
+    run "/usr/bin/xattr", args: ["-cr", "{{staged_path}}"]
   end
 end
