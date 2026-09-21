@@ -7,6 +7,7 @@ cask "notesoverlay" do
   desc "Floating Markdown scratchpad with a global hotkey"
   homepage "https://github.com/niderhoff/notesoverlay"
 
+  depends_on arch: :arm64
   depends_on macos: :sonoma
 
   app "NotesOverlay.app"
