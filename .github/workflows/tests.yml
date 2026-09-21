@@ -1,10 +1,10 @@
 name: brew test-bot
 
+# Push-to-main only: no pull_request trigger, so nothing from a fork ever runs here.
 on:
   push:
     branches:
       - main
-  pull_request:
 
 jobs:
   test-bot:
@@ -36,12 +36,3 @@ jobs:
       - run: brew test-bot --only-setup
 
       - run: brew test-bot --only-tap-syntax
-      - run: brew test-bot --only-formulae
-        if: github.event_name == 'pull_request'
-
-      - name: Upload bottles as artifact
-        if: always() && github.event_name == 'pull_request'
-        uses: actions/upload-artifact@v4
-        with:
-          name: bottles_${{ matrix.os }}
-          path: '*.bottle.*'
