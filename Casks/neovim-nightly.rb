@@ -1,14 +1,14 @@
 cask "neovim-nightly" do
+  arch arm: "arm64", intel: "x86_64"
+
   version :latest
   sha256 :no_check
 
-  arch arm: "arm64", intel: "x86_64"
   url "https://github.com/neovim/neovim/releases/download/nightly/nvim-macos-#{arch}.tar.gz",
       verified: "github.com/neovim"
-
   name "Neovim"
   desc "Vim-fork focused on extensibility and usability"
-  homepage "https://neovim.io"
+  homepage "https://neovim.io/"
 
   # removed:
   # conflicts_with formula: "neovim"
@@ -17,6 +17,6 @@ cask "neovim-nightly" do
   binary "nvim-macos-#{arch}/bin/nvim"
 
   postflight do
-    system_command "xattr", args: ["-cr", "#{staged_path}"]
+    system_command "xattr", args: ["-cr", staged_path.to_s]
   end
 end
